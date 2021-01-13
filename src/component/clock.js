@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 
 function Clock() {
+  let time = new Date().toLocaleTimeString();
   const date = new Date();
-  const [hourtime, setHourtime] = useState(date.getHours());
-  const [minutetime, setMinutetime] = useState(date.getMinutes());
-  const [secondtime, setSecondtime] = useState(date.getSeconds());
+  const [ctime, setCtime] = useState(time);
 
-  var amPm = hourtime < 12 ? "PM" : "AM";
-  var day;
   var weekday = new Array(7);
   weekday[0] = "Sunday";
   weekday[1] = "Monday";
@@ -40,39 +37,26 @@ function Clock() {
     " " +
     date.getFullYear();
 
-  if (hourtime < 12 && amPm === "AM") {
+  var day;
+  if (date.getHours() < 12) {
     day = "Good Morning";
-  } else if (hourtime < 6 && hourtime >= 12 && amPm === "PM") {
+  } else if (date.getHours() >= 12 && date.getHours() < 6) {
     day = "Good Afternoon";
   } else {
     day = "Good Night";
   }
 
   const UpdateTime = () => {
-    const date = new Date();
-    if (date.getHours() > 12) {
-      setHourtime(date.getHours() - 12);
-    } else {
-      setHourtime(date.getHours());
-    }
-    setMinutetime(date.getMinutes());
-    setSecondtime(date.getSeconds());
-    var ht = ("0" + hourtime).slice(-2);
-    var mt = ("0" + minutetime).slice(-2);
-    var st = ("0" + secondtime).slice(-2);
-    return (
-      <div>
-        <h1 className="time">{ht + ":" + mt + ":" + st + " " + amPm}</h1>
-        <h1 className="tanggal">{hari}</h1>
-        <h1 className="hari">{day}</h1>
-      </div>
-    );
+    time = new Date().toLocaleTimeString();
+    setCtime(time);
   };
 
   setInterval(UpdateTime, 1000);
   return (
-    <div className="border">
-      <UpdateTime />
+    <div className="divWrap">
+      <h1 className="time">{ctime}</h1>
+      <h1 className="tanggal">{hari}</h1>
+      <h1 className="hari">{day}</h1>
     </div>
   );
 }
