@@ -1,24 +1,5 @@
 import React, { useState } from "react";
 
-// const copyToClipboard = (str) => {
-//   var el = document.createElement("textarea");
-//   el.value = str;
-//   el.style.top = "0";
-//   el.style.left = "0";
-//   el.style.position = "fixed";
-//   document.body.appendChild(el);
-//   el.focus();
-//   el.select();
-//   try {
-//     var successful = document.execCommand("copy");
-//     var msg = successful ? "successful" : "unsuccessful";
-//     console.log("Fallback: Copying text command was " + msg);
-//   } catch (err) {
-//     console.error("Fallback: Oops, unable to copy", err);
-//   }
-//   document.body.removeChild(el);
-// };
-
 function Clock() {
   let time = new Date().toLocaleTimeString();
   const date = new Date();
@@ -73,8 +54,8 @@ function Clock() {
   setInterval(UpdateTime, 1000);
   return (
     <div className="divWrap">
-      <h1 className="time" /*onClick={copyToClipboard(ctime)}*/>{ctime}</h1>
-      <h1 className="tanggal" /*onClick={copyToClipboard(hari)}*/>{hari}</h1>
+      <h1 className="time">{ctime}</h1>
+      <h1 className="tanggal">{hari}</h1>
       <h1 className="day">{day}</h1>
     </div>
   );
