@@ -16,10 +16,11 @@
 }
 
 .time {
-  padding-top: 5rem;
+  margin-top: 9.5rem;
   color: #305f72;
   padding-bottom: 0rem;
   font-size: 12vh;
+  cursor: pointer;
 }
 
 .tanggal {
@@ -27,9 +28,10 @@
   color: rgb(62, 136, 201);
   position: relative;
   bottom: 6vh;
+  cursor: pointer;
 }
 
-.hari {
+.day {
   color: dimgrey;
   position: relative;
   bottom: 6vh;

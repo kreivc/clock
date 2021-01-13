@@ -51,12 +51,25 @@ function Clock() {
     setCtime(time);
   };
 
+  const copyToClipboard = (str) => {
+    const el = document.createElement("textarea");
+    el.value = str;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand("copy");
+    document.body.removeChild(el);
+  };
+
   setInterval(UpdateTime, 1000);
   return (
     <div className="divWrap">
-      <h1 className="time">{ctime}</h1>
-      <h1 className="tanggal">{hari}</h1>
-      <h1 className="hari">{day}</h1>
+      <h1 className="time" onClick={copyToClipboard(ctime)} id="ctime">
+        {ctime}
+      </h1>
+      <h1 className="tanggal" onClick={copyToClipboard(hari)} id="hari">
+        {hari}
+      </h1>
+      <h1 className="day">{day}</h1>
     </div>
   );
 }
