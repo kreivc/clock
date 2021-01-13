@@ -1,5 +1,24 @@
 import React, { useState } from "react";
 
+// const copyToClipboard = (str) => {
+//   var el = document.createElement("textarea");
+//   el.value = str;
+//   el.style.top = "0";
+//   el.style.left = "0";
+//   el.style.position = "fixed";
+//   document.body.appendChild(el);
+//   el.focus();
+//   el.select();
+//   try {
+//     var successful = document.execCommand("copy");
+//     var msg = successful ? "successful" : "unsuccessful";
+//     console.log("Fallback: Copying text command was " + msg);
+//   } catch (err) {
+//     console.error("Fallback: Oops, unable to copy", err);
+//   }
+//   document.body.removeChild(el);
+// };
+
 function Clock() {
   let time = new Date().toLocaleTimeString();
   const date = new Date();
@@ -40,7 +59,7 @@ function Clock() {
   var day;
   if (date.getHours() < 12) {
     day = "Good Morning";
-  } else if (date.getHours() >= 12 && date.getHours() < 6) {
+  } else if (date.getHours() >= 12 && date.getHours() < 18) {
     day = "Good Afternoon";
   } else {
     day = "Good Night";
@@ -51,24 +70,11 @@ function Clock() {
     setCtime(time);
   };
 
-  const copyToClipboard = (str) => {
-    const el = document.createElement("textarea");
-    el.value = str;
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand("copy");
-    document.body.removeChild(el);
-  };
-
   setInterval(UpdateTime, 1000);
   return (
     <div className="divWrap">
-      <h1 className="time" onClick={copyToClipboard(ctime)} id="ctime">
-        {ctime}
-      </h1>
-      <h1 className="tanggal" onClick={copyToClipboard(hari)} id="hari">
-        {hari}
-      </h1>
+      <h1 className="time" /*onClick={copyToClipboard(ctime)}*/>{ctime}</h1>
+      <h1 className="tanggal" /*onClick={copyToClipboard(hari)}*/>{hari}</h1>
       <h1 className="day">{day}</h1>
     </div>
   );
