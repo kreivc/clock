@@ -37,28 +37,42 @@ function Clock() {
     " " +
     date.getFullYear();
 
-  var day;
-  if (date.getHours() < 12) {
-    day = "Good Morning";
-  } else if (date.getHours() >= 12 && date.getHours() < 18) {
-    day = "Good Afternoon";
-  } else {
-    day = "Good Night";
-  }
-
   const UpdateTime = () => {
     time = new Date().toLocaleTimeString();
     setCtime(time);
   };
 
   setInterval(UpdateTime, 1000);
-  return (
-    <div className="divWrap">
-      <h1 className="time">{ctime}</h1>
-      <h1 className="tanggal">{hari}</h1>
-      <h1 className="day">{day}</h1>
-    </div>
-  );
+
+  var day;
+  if (date.getHours() < 12) {
+    day = "Good Morning";
+    return (
+      <div>
+        <h1 className="timePagi">{ctime}</h1>
+        <h1 className="tanggalPagi">{hari}</h1>
+        <h1 className="dayPagi">{day}</h1>
+      </div>
+    );
+  } else if (date.getHours() >= 12 && date.getHours() < 18) {
+    day = "Good Afternoon";
+    return (
+      <div>
+        <h1 className="timeSiang">{ctime}</h1>
+        <h1 className="tanggalSiang">{hari}</h1>
+        <h1 className="daySiang">{day}</h1>
+      </div>
+    );
+  } else {
+    day = "Good Night";
+    return (
+      <div>
+        <h1 className="timeMalam">{ctime}</h1>
+        <h1 className="tanggalMalam">{hari}</h1>
+        <h1 className="dayMalam">{day}</h1>
+      </div>
+    );
+  }
 }
 
 export default Clock;
