@@ -3,7 +3,7 @@ import "./loader.css";
 
 function Loader() {
   return (
-    <div>
+    <div className="bgload">
       <h1 className="loading">Loading...</h1>
       <h2 className="loading2">Getting Date & Time..</h2>
     </div>
