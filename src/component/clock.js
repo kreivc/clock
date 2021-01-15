@@ -49,8 +49,18 @@ function Clock() {
     day = "Good Morning";
     return (
       <div>
-        <h1 className="timePagi">{ctime}</h1>
-        <h1 className="tanggalPagi">{hari}</h1>
+        <h1
+          className="timePagi"
+          onClick={() => navigator.clipboard.writeText(ctime)}
+        >
+          {ctime}
+        </h1>
+        <h1
+          className="tanggalPagi"
+          onClick={() => navigator.clipboard.writeText(hari)}
+        >
+          {hari}
+        </h1>
         <h1 className="dayPagi">{day}</h1>
       </div>
     );
@@ -58,8 +68,18 @@ function Clock() {
     day = "Good Afternoon";
     return (
       <div>
-        <h1 className="timeSiang">{ctime}</h1>
-        <h1 className="tanggalSiang">{hari}</h1>
+        <h1
+          className="timeSiang"
+          onClick={() => navigator.clipboard.writeText(ctime)}
+        >
+          {ctime}
+        </h1>
+        <h1
+          className="tanggalSiang"
+          onClick={() => navigator.clipboard.writeText(hari)}
+        >
+          {hari}
+        </h1>
         <h1 className="daySiang">{day}</h1>
       </div>
     );
@@ -67,8 +87,18 @@ function Clock() {
     day = "Good Night";
     return (
       <div>
-        <h1 className="timeMalam">{ctime}</h1>
-        <h1 className="tanggalMalam">{hari}</h1>
+        <h1
+          className="timeMalam"
+          onClick={() => navigator.clipboard.writeText(ctime)}
+        >
+          {ctime}
+        </h1>
+        <h1
+          className="tanggalMalam"
+          onClick={() => navigator.clipboard.writeText(hari)}
+        >
+          {hari}
+        </h1>
         <h1 className="dayMalam">{day}</h1>
       </div>
     );
