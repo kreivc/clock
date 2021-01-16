@@ -125,11 +125,17 @@ function Alarm() {
     setFormValue("");
     dummy.current.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <>
-      <form className="sectionInput" onSubmit={sendAlarm}>
+      <form className="sectionInput">
         <div className="alrView">
-          {alarm && alarm.map((alr) => <AlarmView key={alr.id} alarm={alr} />)}
+          {alarm &&
+            alarm.map((alr) => (
+              <div>
+                <AlarmView key={alr.id} alarm={alr} />
+              </div>
+            ))}
           <span ref={dummy}></span>
         </div>
 
@@ -140,7 +146,12 @@ function Alarm() {
           placeholder="Input Alarm Time"
         />
 
-        <button className="submitTime" type="submit" disabled={!formValue}>
+        <button
+          className="submitTime"
+          type="submit"
+          onClick={sendAlarm}
+          disabled={!formValue}
+        >
           Submit
         </button>
       </form>
@@ -149,13 +160,21 @@ function Alarm() {
 }
 
 function AlarmView(props) {
-  const { detail, uid } = props.alarm;
-  const detailClass = uid === auth.currentUser.uid ? "on" : "off";
+  const { detail } = props.alarm;
+
+  const delAlarm = async (e) => {
+    e.preventDefault();
+
+    firestore.collection("alarm").doc(props.alarm.id).delete();
+  };
 
   return (
     <>
-      <div className={`alarm ${detailClass}`}>
+      <div className="timeAlarmBox">
         <h1>{detail}</h1>
+        <symbol onClick={delAlarm} className="delAlarm">
+          ❌
+        </symbol>
       </div>
     </>
   );

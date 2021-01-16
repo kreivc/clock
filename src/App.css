@@ -195,3 +195,32 @@
   min-width: 50vh;
   color: whitesmoke;
 }
+
+.timeAlarmBox {
+  outline: none;
+  position: relative;
+  display: flex;
+  border: none;
+  top: 0.4vh;
+  left: 0.6vh;
+}
+
+.delAlarm {
+  font-size: 2vh;
+  padding: 0.3vh;
+  left: 2vh;
+  top: 3.2vh;
+  height: 2.95vh;
+  position: relative;
+  cursor: pointer;
+  background-color: aliceblue;
+  border-radius: 2vh;
+}
+
+.delAlarm:hover {
+  background-color: rgb(170, 170, 170);
+}
+
+.delAlarm:active {
+  background-color: red;
+}
