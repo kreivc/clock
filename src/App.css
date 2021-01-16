@@ -134,3 +134,32 @@
   transform: translate(-50%, -50%);
   transition: 0.15s;
 }
+
+.sign {
+  font-family: -apple-system, Roboto sans-serif;
+  position: absolute;
+  margin: 2vh;
+  right: 1.5vh;
+  top: 0.5vh;
+  padding: 2vh 5vh;
+  font-size: 2vh;
+  text-shadow: 2vh;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: whitesmoke;
+  background-color: rgb(182, 181, 181);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 6px #999;
+}
+
+.sign:hover {
+  background-color: grey;
+}
+
+.sign:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(3px);
+}

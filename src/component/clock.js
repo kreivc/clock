@@ -51,13 +51,19 @@ function Clock() {
       <div>
         <h1
           className="timePagi"
-          onClick={() => navigator.clipboard.writeText(ctime)}
+          onClick={() => {
+            navigator.clipboard.writeText(ctime);
+            alert(ctime + " Coppied!");
+          }}
         >
           {ctime}
         </h1>
         <h1
           className="tanggalPagi"
-          onClick={() => navigator.clipboard.writeText(hari)}
+          onClick={() => {
+            navigator.clipboard.writeText(hari);
+            alert(hari + " Coppied!");
+          }}
         >
           {hari}
         </h1>
@@ -70,13 +76,19 @@ function Clock() {
       <div>
         <h1
           className="timeSiang"
-          onClick={() => navigator.clipboard.writeText(ctime)}
+          onClick={() => {
+            navigator.clipboard.writeText(ctime);
+            alert(ctime + " Coppied!");
+          }}
         >
           {ctime}
         </h1>
         <h1
           className="tanggalSiang"
-          onClick={() => navigator.clipboard.writeText(hari)}
+          onClick={() => {
+            navigator.clipboard.writeText(hari);
+            alert(hari + " Coppied!");
+          }}
         >
           {hari}
         </h1>
@@ -89,13 +101,19 @@ function Clock() {
       <div>
         <h1
           className="timeMalam"
-          onClick={() => navigator.clipboard.writeText(ctime)}
+          onClick={() => {
+            navigator.clipboard.writeText(ctime);
+            alert(ctime + " Coppied!");
+          }}
         >
           {ctime}
         </h1>
         <h1
           className="tanggalMalam"
-          onClick={() => navigator.clipboard.writeText(hari)}
+          onClick={() => {
+            navigator.clipboard.writeText(hari);
+            alert(hari + " Coppied");
+          }}
         >
           {hari}
         </h1>
