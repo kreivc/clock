@@ -108,7 +108,6 @@ function Alarm() {
   const dummy = useRef();
   const alarmRef = firestore.collection("alarm");
   const query = alarmRef.orderBy("detail").limit(25);
-
   const [alarm] = useCollectionData(query, { idField: "id" });
   const [formValue, setFormValue] = useState("");
 
@@ -129,6 +128,11 @@ function Alarm() {
   return (
     <>
       <form className="sectionInput" onSubmit={sendAlarm}>
+        <div className="alrView">
+          {alarm && alarm.map((alr) => <AlarmView key={alr.id} alarm={alr} />)}
+          <span ref={dummy}></span>
+        </div>
+
         <input
           className="inpTime"
           value={formValue}
@@ -139,11 +143,6 @@ function Alarm() {
         <button className="submitTime" type="submit" disabled={!formValue}>
           Submit
         </button>
-
-        <div className="alrView">
-          {alarm && alarm.map((alr) => <AlarmView key={alr.id} alarm={alr} />)}
-          <span ref={dummy}></span>
-        </div>
       </form>
     </>
   );
@@ -151,7 +150,6 @@ function Alarm() {
 
 function AlarmView(props) {
   const { detail, uid } = props.alarm;
-
   const detailClass = uid === auth.currentUser.uid ? "on" : "off";
 
   return (
