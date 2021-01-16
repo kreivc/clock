@@ -67,7 +67,7 @@ function Clock() {
         >
           {hari}
         </h1>
-        <h1 className="dayPagi">{day}</h1>
+        <h1 className="dayPagi">{day}!</h1>
       </div>
     );
   } else if (date.getHours() >= 12 && date.getHours() < 18) {
@@ -92,7 +92,7 @@ function Clock() {
         >
           {hari}
         </h1>
-        <h1 className="daySiang">{day}</h1>
+        <h1 className="daySiang">{day}!</h1>
       </div>
     );
   } else {
@@ -117,7 +117,7 @@ function Clock() {
         >
           {hari}
         </h1>
-        <h1 className="dayMalam">{day}</h1>
+        <h1 className="dayMalam">{day}!</h1>
       </div>
     );
   }
