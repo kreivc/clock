@@ -163,3 +163,43 @@
   box-shadow: 0 5px #666;
   transform: translateY(3px);
 }
+
+.sectionInput {
+  outline: none;
+  position: absolute;
+  margin: 1.3vh;
+  top: 0.4vh;
+  left: 0.6vh;
+}
+
+.inpTime {
+  outline: none;
+  text-align: center;
+  width: 50%;
+  border-radius: 5px;
+  background-color: rgb(245, 245, 245);
+  box-shadow: 0 1px #999;
+}
+
+.submitTime {
+  color: white;
+  outline: none;
+  border-radius: 5px;
+  background-color: #999;
+}
+
+.submitTime:hover {
+  background-color: grey;
+}
+
+.on {
+  justify-content: center;
+  outline: none;
+  position: absolute;
+}
+
+.off {
+  justify-content: center;
+  outline: none;
+  position: absolute;
+}
