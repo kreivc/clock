@@ -172,9 +172,9 @@ function AlarmView(props) {
     <>
       <div className="timeAlarmBox">
         <h1>{detail}</h1>
-        <symbol onClick={delAlarm} className="delAlarm">
+        <h1 onClick={delAlarm} className="delAlarm">
           ❌
-        </symbol>
+        </h1>
       </div>
     </>
   );
