@@ -141,7 +141,7 @@
   margin: 2vh;
   right: 1.5vh;
   top: 0.5vh;
-  padding: 2vh 5vh;
+  padding: 1vh 5vh;
   font-size: 2vh;
   text-shadow: 2vh;
   text-align: center;
@@ -151,7 +151,7 @@
   background-color: rgb(182, 181, 181);
   border: none;
   border-radius: 15px;
-  box-shadow: 0 6px #999;
+  box-shadow: 0 5px #999;
 }
 
 .sign:hover {
@@ -168,6 +168,7 @@
   outline: none;
   position: absolute;
   margin: 1.3vh;
+  border: none;
   top: 0.4vh;
   left: 0.6vh;
 }
@@ -186,20 +187,10 @@
   outline: none;
   border-radius: 5px;
   background-color: #999;
+  cursor: pointer;
+  box-shadow: 0 1px #666;
 }
 
 .submitTime:hover {
   background-color: grey;
-}
-
-.on {
-  justify-content: center;
-  outline: none;
-  position: absolute;
-}
-
-.off {
-  justify-content: center;
-  outline: none;
-  position: absolute;
 }
