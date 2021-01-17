@@ -166,17 +166,8 @@
   left: 0.6vh;
 }
 
-.inpTime {
-  outline: none;
-  text-align: center;
-  width: 50%;
-  border-radius: 5px;
-  background-color: rgb(245, 245, 245);
-  box-shadow: 0 1px #999;
-}
-
 .submitTime {
-  margin-left: 0.5vh;
+  margin-left: 0.3vh;
   color: white;
   outline: none;
   border-radius: 5px;
@@ -227,7 +218,7 @@
 }
 
 .stop {
-  margin-left: 0.55vh;
+  margin-left: 0.5vh;
   color: white;
   outline: none;
   border-radius: 7px;
@@ -239,4 +230,31 @@
 
 .stop:hover {
   background-color: rgb(196, 49, 49);
+}
+
+select {
+  margin-right: 0.55vh;
+  padding: 0.3vh;
+  height: auto;
+  background-color: #666;
+  color: #fcfcfc;
+  width: auto;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: 0 1px #999;
+}
+
+option {
+  height: auto;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.inpTime {
+  outline: none;
+  text-align: center;
+  width: 50%;
+  border-radius: 5px;
+  background-color: rgb(245, 245, 245);
+  box-shadow: 0 1px #999;
 }
