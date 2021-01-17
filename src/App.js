@@ -100,7 +100,7 @@ function Alarm() {
   const alarmRef = firestore.collection("alarm");
   const query = alarmRef.orderBy("detail").limit(10);
   const [alarm] = useCollectionData(query, { idField: "id" });
-  const [alarmValue, setAlarmValue] = useState("");
+  const [alarmValue, setAlarmValue] = useState("00:00:00 AM");
 
   const sendAlarm = async (e) => {
     e.preventDefault();
