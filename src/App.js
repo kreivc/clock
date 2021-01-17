@@ -96,16 +96,14 @@ function SignOut() {
 
 function Alarm() {
   const dummy = useRef();
+  const { uid, displayName } = auth.currentUser;
   const alarmRef = firestore.collection("alarm");
-  const query = alarmRef.orderBy("detail").limit(25);
+  const query = alarmRef.orderBy("detail").limit(10);
   const [alarm] = useCollectionData(query, { idField: "id" });
-  // const [formValue, setFormValue] = useState("");
   const [alarmValue, setAlarmValue] = useState("");
 
   const sendAlarm = async (e) => {
     e.preventDefault();
-
-    const { uid, displayName } = auth.currentUser;
 
     await alarmRef.add({
       detail: alarmValue,
