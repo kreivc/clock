@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, useState } from "react";
+import React, { Suspense, useRef, useState, useEffect } from "react";
 import "./App.css";
 import Loader from "./component/loader";
 
@@ -155,6 +155,20 @@ function AlarmView(props) {
 
     firestore.collection("alarm").doc(props.alarm.id).delete();
   };
+  const [timeNow, setTimeNow] = useState();
+
+  const UpdateTime = () => {
+    let time = new Date().toLocaleTimeString();
+    setTimeNow(time);
+  };
+
+  setInterval(UpdateTime, 1000);
+
+  useEffect(() => {
+    if (detail === timeNow) {
+      alert("ALARM RINGING");
+    }
+  }, [UpdateTime]);
 
   return (
     <>
