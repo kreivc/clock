@@ -112,9 +112,6 @@ function Alarm() {
       displayName,
       uid,
     });
-
-    // setFormValue("");
-    setAlarmValue("");
     dummy.current.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -144,13 +141,6 @@ function Alarm() {
             ))}
           <span ref={dummy}></span>
         </div>
-
-        {/* <input
-          className="inpTime"
-          value={formValue}
-          onChange={(e) => setFormValue(e.target.value)}
-          placeholder="Input Alarm Time"
-        /> */}
 
         <div>
           <select className="hours" onChange={setAlarm}>

@@ -249,12 +249,3 @@ option {
   border-radius: 10px;
   text-align: center;
 }
-
-.inpTime {
-  outline: none;
-  text-align: center;
-  width: 50%;
-  border-radius: 5px;
-  background-color: rgb(245, 245, 245);
-  box-shadow: 0 1px #999;
-}
