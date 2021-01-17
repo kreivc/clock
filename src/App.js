@@ -176,7 +176,7 @@ function AlarmView(props) {
 
   useEffect(() => {
     if (detail === timeNow) {
-      alert("ALARM RINGING");
+      // alert("ALARM RINGING");
       document.querySelector(".Sound").play();
     }
   }, [UpdateTime]);
