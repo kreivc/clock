@@ -5,6 +5,10 @@ function Clock() {
   const date = new Date();
   const [ctime, setCtime] = useState(time);
 
+  var timeClass;
+  var tanggalClass;
+  var dayClass;
+
   var weekday = new Array(7);
   weekday[0] = "Sunday";
   weekday[1] = "Monday";
@@ -47,80 +51,45 @@ function Clock() {
   var day;
   if (date.getHours() < 12) {
     day = "Good Morning";
-    return (
-      <div>
-        <h1
-          className="timePagi"
-          onClick={() => {
-            navigator.clipboard.writeText(ctime);
-            alert(ctime + " Coppied!");
-          }}
-        >
-          {ctime}
-        </h1>
-        <h1
-          className="tanggalPagi"
-          onClick={() => {
-            navigator.clipboard.writeText(hari);
-            alert(hari + " Coppied!");
-          }}
-        >
-          {hari}
-        </h1>
-        <h1 className="dayPagi">{day}!</h1>
-      </div>
-    );
+
+    timeClass = "timePagi";
+    tanggalClass = "tanggalPagi";
+    dayClass = "dayPagi";
   } else if (date.getHours() >= 12 && date.getHours() < 18) {
     day = "Good Afternoon";
-    return (
-      <div>
-        <h1
-          className="timeSiang"
-          onClick={() => {
-            navigator.clipboard.writeText(ctime);
-            alert(ctime + " Coppied!");
-          }}
-        >
-          {ctime}
-        </h1>
-        <h1
-          className="tanggalSiang"
-          onClick={() => {
-            navigator.clipboard.writeText(hari);
-            alert(hari + " Coppied!");
-          }}
-        >
-          {hari}
-        </h1>
-        <h1 className="daySiang">{day}!</h1>
-      </div>
-    );
+    timeClass = "timeSiang";
+    tanggalClass = "tanggalSiang";
+    dayClass = "daySiang";
   } else {
     day = "Good Night";
-    return (
-      <div>
-        <h1
-          className="timeMalam"
-          onClick={() => {
-            navigator.clipboard.writeText(ctime);
-            alert(ctime + " Coppied!");
-          }}
-        >
-          {ctime}
-        </h1>
-        <h1
-          className="tanggalMalam"
-          onClick={() => {
-            navigator.clipboard.writeText(hari);
-            alert(hari + " Coppied");
-          }}
-        >
-          {hari}
-        </h1>
-        <h1 className="dayMalam">{day}!</h1>
-      </div>
-    );
+    timeClass = "timeMalam";
+    tanggalClass = "tanggalMalam";
+    dayClass = "dayMalam";
   }
+
+  return (
+    <div>
+      <h1
+        className={`${timeClass}`}
+        onClick={() => {
+          navigator.clipboard.writeText(ctime);
+          alert(ctime + " Coppied!");
+        }}
+      >
+        {ctime}
+      </h1>
+      <h1
+        className={`${tanggalClass}`}
+        onClick={() => {
+          navigator.clipboard.writeText(hari);
+          alert(hari + " Coppied");
+        }}
+      >
+        {hari}
+      </h1>
+      <h1 className={`${dayClass}`}>{day}!</h1>
+    </div>
+  );
 }
 
 export default Clock;

@@ -5,7 +5,6 @@ import Loader from "./component/loader";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
-// import "firebase/analytics";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
@@ -24,37 +23,26 @@ firebase.initializeApp({
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
-// const analytics = firebase.analytics();
 
 function App() {
   const [user] = useAuthState(auth);
   const date = new Date();
+  const [appClass, setAppClass] = useState("");
   function ClockFinal() {
     if (date.getHours() < 12) {
-      return (
-        <div className="AppPagi" id="app">
-          <Suspense fallback={<Loader />}>
-            <Clock />
-          </Suspense>
-        </div>
-      );
+      setAppClass("AppPagi");
     } else if (date.getHours() >= 12 && date.getHours() < 18) {
-      return (
-        <div className="AppSiang" id="app">
-          <Suspense fallback={<Loader />}>
-            <Clock />
-          </Suspense>
-        </div>
-      );
+      setAppClass("AppSiang");
     } else {
-      return (
-        <div className="AppMalam" id="app">
-          <Suspense fallback={<Loader />}>
-            <Clock />
-          </Suspense>
-        </div>
-      );
+      setAppClass("AppMalam");
     }
+    return (
+      <div className={`${appClass}`} id="app">
+        <Suspense fallback={<Loader />}>
+          <Clock />
+        </Suspense>
+      </div>
+    );
   }
 
   return (
