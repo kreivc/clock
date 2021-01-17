@@ -176,6 +176,7 @@
 }
 
 .submitTime {
+  margin-left: 0.5vh;
   color: white;
   outline: none;
   border-radius: 5px;
@@ -185,7 +186,7 @@
 }
 
 .submitTime:hover {
-  background-color: grey;
+  background-color: #3e8e41;
 }
 
 .alrView {
@@ -223,4 +224,19 @@
 
 .delAlarm:active {
   background-color: red;
+}
+
+.stop {
+  margin-left: 0.55vh;
+  color: white;
+  outline: none;
+  border-radius: 7px;
+  background-color: #999;
+  cursor: pointer;
+  box-shadow: 0 1px #666;
+  min-height: 3.3vh;
+}
+
+.stop:hover {
+  background-color: rgb(196, 49, 49);
 }

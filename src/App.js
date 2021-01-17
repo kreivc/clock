@@ -9,6 +9,8 @@ import "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
+import Sound from "./sound/AlarmForUKreivc.mp3";
+
 const Clock = React.lazy(() => import("./component/clock"));
 
 firebase.initializeApp({
@@ -114,6 +116,11 @@ function Alarm() {
     dummy.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  const stopAlarm = (e) => {
+    e.preventDefault();
+    document.querySelector(".Sound").pause();
+  };
+
   return (
     <>
       <form className="sectionInput">
@@ -142,6 +149,9 @@ function Alarm() {
         >
           Submit
         </button>
+        <button className="stop" onClick={stopAlarm}>
+          Stop
+        </button>
       </form>
     </>
   );
@@ -167,6 +177,7 @@ function AlarmView(props) {
   useEffect(() => {
     if (detail === timeNow) {
       alert("ALARM RINGING");
+      document.querySelector(".Sound").play();
     }
   }, [UpdateTime]);
 
@@ -177,6 +188,11 @@ function AlarmView(props) {
         <h1 onClick={delAlarm} className="delAlarm">
           ❌
         </h1>
+      </div>
+      <div className="playback">
+        <audio className="Sound">
+          <source src={Sound} type="audio/mp3" />
+        </audio>
       </div>
     </>
   );
