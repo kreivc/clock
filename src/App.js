@@ -253,7 +253,7 @@ function AlarmView(props) {
   setInterval(UpdateTime, 1000);
 
   useEffect(() => {
-    if (detail === timeNow) {
+    if (detail === timeNow && user.uid === uid) {
       document.querySelector(".Sound").play();
     }
   }, [UpdateTime]);
