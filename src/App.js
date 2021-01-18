@@ -101,7 +101,7 @@ function Alarm() {
   const query = alarmRef.orderBy("detail").limit(10);
   const [alarm] = useCollectionData(query, { idField: "id" });
   const [alarmValue, setAlarmValue] = useState("00:00:00 AM");
-
+  // console.log(alarm);
   const sendAlarm = async (e) => {
     e.preventDefault();
 
@@ -235,8 +235,9 @@ function Alarm() {
 }
 
 function AlarmView(props) {
-  const { detail } = props.alarm;
+  const { detail, uid } = props.alarm;
   const [timeNow, setTimeNow] = useState();
+  let user = firebase.auth().currentUser;
 
   const delAlarm = async (e) => {
     e.preventDefault();
@@ -256,22 +257,25 @@ function AlarmView(props) {
       document.querySelector(".Sound").play();
     }
   }, [UpdateTime]);
-
-  return (
-    <>
-      <div className="timeAlarmBox">
-        <h1>{detail}</h1>
-        <h1 onClick={delAlarm} className="delAlarm">
-          ❌
-        </h1>
-      </div>
-      <div className="playback">
-        <audio className="Sound">
-          <source src={Sound} type="audio/mp3" />
-        </audio>
-      </div>
-    </>
-  );
+  if (user.uid === uid) {
+    return (
+      <>
+        <div className="timeAlarmBox">
+          <h1>{detail}</h1>
+          <h1 onClick={delAlarm} className="delAlarm">
+            ❌
+          </h1>
+        </div>
+        <div className="playback">
+          <audio className="Sound">
+            <source src={Sound} type="audio/mp3" />
+          </audio>
+        </div>
+      </>
+    );
+  } else {
+    return null;
+  }
 }
 
 export default App;
