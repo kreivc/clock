@@ -98,7 +98,7 @@ function Alarm() {
   const dummy = useRef();
   const { uid, displayName } = auth.currentUser;
   const alarmRef = firestore.collection("alarm");
-  const query = alarmRef.orderBy("detail").limit(10);
+  const query = alarmRef.orderBy("detail")
   const [alarm] = useCollectionData(query, { idField: "id" });
   const [alarmValue, setAlarmValue] = useState("00:00:00 AM");
   // console.log(alarm);
