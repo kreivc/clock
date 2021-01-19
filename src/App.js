@@ -11,6 +11,8 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 
 import Sound from "./sound/AlarmForUKreivc.mp3";
 
+// IMPORT END
+
 const Clock = React.lazy(() => import("./component/clock"));
 
 firebase.initializeApp({
@@ -25,6 +27,7 @@ firebase.initializeApp({
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
+// INITIALIZE END
 
 function App() {
   const [user] = useAuthState(auth);
