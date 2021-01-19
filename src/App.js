@@ -98,19 +98,37 @@ function Alarm() {
   const dummy = useRef();
   const { uid, displayName } = auth.currentUser;
   const alarmRef = firestore.collection("alarm");
-  const query = alarmRef.orderBy("detail")
+  const query = alarmRef.orderBy("detail");
   const [alarm] = useCollectionData(query, { idField: "id" });
   const [alarmValue, setAlarmValue] = useState("00:00:00 AM");
-  // console.log(alarm);
+  var details = [];
+
+  function asd() {
+    alarmRef
+      .get()
+      .then((snapshot) => {
+        snapshot.forEach((doc) => {
+          details.push(doc.data().detail);
+        });
+      })
+      .catch((err) => {
+        console.log("Error getting documents", err);
+      });
+  }
+  asd();
+
   const sendAlarm = async (e) => {
     e.preventDefault();
-
-    await alarmRef.add({
-      detail: alarmValue,
-      displayName,
-      uid,
-    });
-    dummy.current.scrollIntoView({ behavior: "smooth" });
+    if (!details.includes(alarmValue)) {
+      await alarmRef.add({
+        detail: alarmValue,
+        displayName,
+        uid,
+      });
+      dummy.current.scrollIntoView({ behavior: "smooth" });
+    } else {
+      return;
+    }
   };
 
   const stopAlarm = (e) => {
