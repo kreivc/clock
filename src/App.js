@@ -16,12 +16,13 @@ import Sound from "./sound/AlarmForUKreivc.mp3";
 const Clock = React.lazy(() => import("./component/clock"));
 
 firebase.initializeApp({
-  apiKey: "AIzaSyCiePYGEUFTOd5Pu3SYF9ZqJzbFA5ANj8c",
-  authDomain: "clockkreivc.firebaseapp.com",
-  projectId: "clockkreivc",
-  storageBucket: "clockkreivc.appspot.com",
-  messagingSenderId: "942852315139",
-  appId: "1:942852315139:web:fcae2e930608d6e0115636",
+  apiKey: "AIzaSyCiWJXV_tTyzpJzwkPHceEEZCBYLfbAL0E",
+  authDomain: "clockreivc.firebaseapp.com",
+  projectId: "clockreivc",
+  storageBucket: "clockreivc.appspot.com",
+  messagingSenderId: "456791742942",
+  appId: "1:456791742942:web:15b8dd82170313cf9a254f",
+  measurementId: "G-ZDE84MVV3T",
 });
 
 const auth = firebase.auth();
