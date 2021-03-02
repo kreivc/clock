@@ -1,6 +1,5 @@
 {
   "projects": {
-    "default": "clockreivc",
-    "ck": "clockreivc"
+    "default": "clockreivc"
   }
 }
