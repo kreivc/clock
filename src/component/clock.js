@@ -50,18 +50,18 @@ function Clock() {
 
   var day;
   if (date.getHours() < 12) {
-    day = "Good Morning";
+    day = "Good Morning!";
 
     timeClass = "timePagi";
     tanggalClass = "tanggalPagi";
     dayClass = "dayPagi";
   } else if (date.getHours() >= 12 && date.getHours() < 18) {
-    day = "Good Afternoon";
+    day = "Good Afternoon!";
     timeClass = "timeSiang";
     tanggalClass = "tanggalSiang";
     dayClass = "daySiang";
   } else {
-    day = "Good Night";
+    day = "Good Night!";
     timeClass = "timeMalam";
     tanggalClass = "tanggalMalam";
     dayClass = "dayMalam";
